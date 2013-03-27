@@ -1,0 +1,29 @@
+struct Node {
+  Node* next;
+  Node* prev;
+}  
+  
+struct list {
+  Node* head;
+  Node* tail;
+  
+  list();
+  list(list const &);
+  list & operator=(list const &);
+  void push_back(int);
+  void pop_back();
+  int back() const;
+  void push_front(int);
+  int front() const;
+  iterator begin();
+  iterator end();
+  void erase(iterator);
+  iterator insert(iterator, int);
+};
+struct iterator {
+  Node* i;
+  int& operator*() const;
+  iterator operator++();
+  iterator operator++(int);
+  iterator operator--();
+}
